@@ -1,0 +1,23 @@
+name: parallax_cards
+description: "A Flutter package for scrolling parallax effect and custom card overlays"
+version: 1.0.0
+homepage: "https://github.com/toseefkhan403/ParallaxCards"
+maintainer: "Toseef Ali Khan (@toseefkhan403)"
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+
+  assets:
+    - assets/images/
