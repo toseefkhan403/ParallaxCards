@@ -1,9 +1,6 @@
 <h1 align="center">Parallax Cards</h1>
 
-<p align="center">A Flutter package for scrolling parallax effect and custom card overlays</p><br>
-
-<img src="https://github.com/toseefkhan403/ParallaxCards/blob/master/display/horizontal.gif" alt="horizontal parallax scrolling" align="left"> 
-<img src="https://github.com/toseefkhan403/ParallaxCards/blob/master/display/vertical.gif" alt="vertical parallax scrolling" align="right">
+<p align="center">A Flutter package for scrolling parallax effect and custom card overlays</p>
 
 ## Getting started
 

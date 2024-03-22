@@ -56,14 +56,17 @@ class _HorizontalExampleState extends State<HorizontalExample> {
                     )
                 ],
               ),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (c) => const VerticalExample()));
-                  },
-                  child: const Text('See Vertical Example')),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (c) => const VerticalExample()));
+                    },
+                    child: const Text('See Vertical Example')),
+              ),
             ],
           ),
         ),
