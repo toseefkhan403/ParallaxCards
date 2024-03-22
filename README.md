@@ -47,7 +47,7 @@ ParallaxCards(
 ),
 ```
 
-<img src="https://github.com/toseefkhan403/ParallaxCards/blob/master/display/horizontal.gif" alt="horizontal parallax scrolling">
+![img](display/horizontal.gif)
 
 ### Vertical scroll view
 
@@ -101,7 +101,7 @@ ParallaxCards(
               ),
 ```
 
-<img src="https://github.com/toseefkhan403/ParallaxCards/blob/master/display/vertical.gif" alt="vertical parallax scrolling">
+![img](display/vertical.gif)
 
 ## Additional information
 
