@@ -1,16 +1,73 @@
-# example
+# Usage
 
-A new Flutter project.
+`ParallaxCards` is a _Stateless Widget_ which you can include in your widget tree.
+You can use it either vertically or horizontally by overriding the `scrollDirection` property:
 
-## Getting Started
+## Horizontal scroll view
+```dart
+ParallaxCards(
+  scrollDirection: Axis.horizontal,
+  imagesList: imagesList,
+  width: 250,
+  height: 350,
+  onTap: (index) {
+    log('$index pressed');
+  },
+),
+```
 
-This project is a starting point for a Flutter application.
+<img src="https://github.com/toseefkhan403/ParallaxCards/blob/master/display/horizontal.gif" align = "right">
 
-A few resources to get you started if this is your first Flutter project:
+## Vertical scroll view
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+You can customize the card overlays according to your preferences by overriding the `overlays` property. 
+However, ensure that the lengths of `imageList` and `overlays` are equal.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```dart
+ParallaxCards(
+                imagesList: imagesList,
+                width: double.infinity,
+                height: 200,
+                onTap: (index) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text("$index tapped"),
+                    duration: const Duration(milliseconds: 500),
+                  ));
+                },
+                overlays: [
+                  for (var title in titlesList)
+                    Stack(
+                      children: [
+                        Positioned.fill(
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  Colors.transparent,
+                                  Colors.black.withOpacity(0.8)
+                                ],
+                                stops: const [0.5, 0.9],
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 16,
+                          bottom: 12,
+                          child: Text(
+                            title,
+                            style: const TextStyle(
+                                fontSize: 22,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
+                    )
+                ],
+              ),
+```
+
+<img src="https://github.com/toseefkhan403/ParallaxCards/blob/master/display/vertical.gif" align = "right">
