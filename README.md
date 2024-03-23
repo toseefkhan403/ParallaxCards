@@ -10,7 +10,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  parallax_cards: ^1.0.0
+  parallax_cards: ^1.0.1
 ```
 
 ### 2. Install it

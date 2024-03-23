@@ -4,3 +4,7 @@
   views
 - Added option for custom card overlays and card properties
 - Added example app showcasing the use of the parallax cards widget
+
+## 1.0.1
+
+- Added documentation for the public APIs and code cleanup

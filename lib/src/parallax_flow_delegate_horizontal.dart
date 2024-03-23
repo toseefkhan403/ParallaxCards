@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// Parallax flow delegate for horizontal scroll direction
+/// adjusts the horizontal alignment of the background image relative to the scroll position to create the illusion of depth as the user scrolls through the list.
 class ParallaxFlowDelegateHorizontal extends FlowDelegate {
   ParallaxFlowDelegateHorizontal({
     required this.scrollable,

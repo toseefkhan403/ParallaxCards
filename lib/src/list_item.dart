@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:parallax_cards/src/parallax_flow_delegate_horizontal.dart';
 import 'package:parallax_cards/src/parallax_flow_delegate_vertical.dart';
 
+/// Individual card item
 class ListItem extends StatelessWidget {
+  /// imageKey for the background image - Important
   final GlobalKey imageKey = GlobalKey();
   final int index;
   final Axis scrollDirection;
@@ -52,6 +54,7 @@ class ListItem extends StatelessWidget {
     );
   }
 
+  /// uses [Flow] widget to build the parallax background - requires a [FlowDelegate]
   Widget _buildParallaxBackground(BuildContext context) {
     return Flow(
         delegate: scrollDirection == Axis.vertical
