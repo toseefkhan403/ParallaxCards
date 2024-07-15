@@ -1,9 +1,10 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:parallax_cards/src/parallax_flow_delegate_horizontal.dart';
 import 'package:parallax_cards/src/parallax_flow_delegate_vertical.dart';
 
 /// Individual card item
-class ListItem extends StatelessWidget {
+class ParallaxListItem extends StatelessWidget {
   /// imageKey for the background image - Important
   final GlobalKey imageKey = GlobalKey();
   final int index;
@@ -16,7 +17,7 @@ class ListItem extends StatelessWidget {
   final Widget overlay;
   final String img;
 
-  ListItem({
+  ParallaxListItem({
     required this.img,
     required this.overlay,
     required this.index,
@@ -69,17 +70,24 @@ class ListItem extends StatelessWidget {
                 imageKey: imageKey,
               ),
         children: [
-          (img.startsWith('http'))
-              ? Image.network(
-                  img,
-                  key: imageKey,
-                  fit: BoxFit.cover,
-                )
-              : Image.asset(
-                  img,
-                  key: imageKey,
-                  fit: BoxFit.cover,
-                ),
+          if (img.startsWith('http'))
+            Image.network(
+              img,
+              key: imageKey,
+              fit: BoxFit.cover,
+            )
+          else if (img.startsWith('assets/'))
+            Image.asset(
+              img,
+              key: imageKey,
+              fit: BoxFit.cover,
+            )
+          else
+            Image.file(
+              File(img),
+              key: imageKey,
+              fit: BoxFit.cover,
+            ),
         ]);
   }
 }

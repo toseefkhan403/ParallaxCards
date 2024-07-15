@@ -25,6 +25,8 @@ class _VerticalExampleState extends State<VerticalExample> {
                   imagesList: imagesList,
                   width: double.infinity,
                   height: 190,
+                  thumbVisibility: true,
+                  thickness: 8,
                   onTap: (index) {
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text("$index tapped"),

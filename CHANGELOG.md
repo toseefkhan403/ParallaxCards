@@ -8,3 +8,8 @@
 ## 1.0.1
 
 - Added documentation for the public APIs and code cleanup
+
+## 1.0.2
+
+- Added `Scrollbar` customization options
+- Added support for showing files through `Image.file`

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'list_item.dart';
+import 'parallax_list_item.dart';
 
 /// A scrollview generating the listItems with parallax background
 class ParallaxCards extends StatelessWidget {
@@ -28,6 +28,12 @@ class ParallaxCards extends StatelessWidget {
   /// background images list - can have url or asset path - required
   final List<String> imagesList;
 
+  /// scrollbar property
+  final bool? thumbVisibility;
+
+  /// scrollbar property
+  final double? thickness;
+
   const ParallaxCards(
       {required this.imagesList,
       this.scrollDirection = Axis.vertical,
@@ -37,6 +43,8 @@ class ParallaxCards extends StatelessWidget {
       this.borderRadius,
       this.overlays,
       this.onTap,
+      this.thumbVisibility,
+      this.thickness,
       super.key});
 
   @override
@@ -46,9 +54,14 @@ class ParallaxCards extends StatelessWidget {
           'Number of overlays must be equal to the number of images');
     }
 
-    return SingleChildScrollView(
-      scrollDirection: scrollDirection,
-      child: Flex(direction: scrollDirection, children: generateChildren()),
+    return Scrollbar(
+      thumbVisibility: thumbVisibility,
+      thickness: thickness,
+      child: SingleChildScrollView(
+        scrollDirection: scrollDirection,
+        primary: true,
+        child: Flex(direction: scrollDirection, children: generateChildren()),
+      ),
     );
   }
 
@@ -57,7 +70,7 @@ class ParallaxCards extends StatelessWidget {
     List<Widget> children = [];
     for (int i = 0; i < imagesList.length; i++) {
       children.add(
-        ListItem(
+        ParallaxListItem(
           img: imagesList[i],
           overlay: overlays != null ? overlays![i] : const SizedBox.shrink(),
           index: i,
